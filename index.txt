@@ -1,0 +1,7 @@
+INDEX FOR ALL SPRING EXPERIMENT PROJECTS
+------------------------------------------------------------------------------------------------
+Project: spring-security-jpa
+Description: This project demonstrates how to setup spring security and use spring data jpa from scratch
+Keywords: spring, security, data jpa
+Web link: https://www.youtube.com/watch?v=TNt3GHuayXs&t=22s
+------------------------------------------------------------------------------------------------
