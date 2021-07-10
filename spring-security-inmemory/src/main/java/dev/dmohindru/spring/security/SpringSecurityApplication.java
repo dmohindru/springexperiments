@@ -3,6 +3,7 @@ package dev.dmohindru.spring.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -27,6 +28,18 @@ public class SpringSecurityApplication extends WebSecurityConfigurerAdapter {
                 .withUser("bar")
                 .password("bar")
                 .roles("ADMIN");
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+        // protect http endpoints
+        http.authorizeRequests()
+                .antMatchers("/admin").hasRole("ADMIN")
+                .antMatchers("/user").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/").permitAll()
+                .and().formLogin();
+
     }
 
     // 2. Encode password create @Bean of type PasswordEncoder
