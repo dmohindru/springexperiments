@@ -1,4 +1,4 @@
-INDEX FOR ALL SPRING EXPERIMENT PROJECTS
+INDEX FOR ALL SPRING/JAVA EXPERIMENT PROJECTS
 ------------------------------------------------------------------------------------------------
 Project: spring-security-jpa
 Description: This project demonstrates how to setup spring security and use spring data jpa from scratch
@@ -12,4 +12,10 @@ Keywords: spring, security, authentication, authorization, in memory, http secur
 Web link: https://www.youtube.com/watch?v=iyXne7dIn7U&list=PLVlZi9Te9BeFqK9SKXUEnT1PYErHP4Vli&index=3
 https://www.youtube.com/watch?v=payxWrmF_0k&list=PLVlZi9Te9BeFqK9SKXUEnT1PYErHP4Vli&index=5&t=6s
 Github: https://github.com/koushikkothagal/spring-boot-security
-------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Project: spring-security-jwt
+Description: This project demonstrates how to setup jwt based authentication
+Keywords: spring, security, authentication, authorization, jwt token
+Web link: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE
+Github: https://github.com/koushikkothagal/spring-security-jwt
+-----------------------------------------------------------------------------------------------
