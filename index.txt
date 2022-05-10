@@ -23,3 +23,7 @@ Project: camel-practice-project1
 Description: Purpose of this project is to practice concepts learned in part 1 of camel in action book
 Keywords: camel, ftp, jms
 -----------------------------------------------------------------------------------------------
+Project: events-demo
+Description: Purpose of this project is to play with spring events and hibernate triggers
+Keywords: events, hibernate, triggers
+-----------------------------------------------------------------------------------------------
