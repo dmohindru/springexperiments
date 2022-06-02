@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=xswPPwYPAFM
+
+19:00 - Code to log messages when a particular type of annotation is found
+20:00 - Creating files with annotation processor (Filer)
+22:00 - Research about META-INF/services folder in resources sections
+36:30 - Apache Velocity to generate source code from a template

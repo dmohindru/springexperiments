@@ -27,3 +27,18 @@ Project: spring-events-demo
 Description: Purpose of this project is to play with spring events and hibernate triggers
 Keywords: events, hibernate, triggers
 -----------------------------------------------------------------------------------------------
+Project: builder-pattern
+Description: Purpose of this project is to understand how builder pattern work. This also uses
+custom annotation processor to generate builder pattern.
+Keywords: builder-pattern, annotation, annotation-processor
+-----------------------------------------------------------------------------------------------
+Project: builder-pattern-annotation-processor
+Description: Purpose of this project is to play with Java annotation processor. This project
+implements a @MyBuilderPattern annotation processor which adds a builder pattern to the annotated
+classes 
+Keywords: builder-pattern, annotation, annotation-processor
+-----------------------------------------------------------------------------------------------
+Project: rety-demo
+Description: Purpose of this project is to Retry mechanism provided by spring boot 
+Keywords: retry, spring-boot
+-----------------------------------------------------------------------------------------------
