@@ -42,3 +42,7 @@ Project: rety-demo
 Description: Purpose of this project is to Retry mechanism provided by spring boot 
 Keywords: retry, spring-boot
 -----------------------------------------------------------------------------------------------
+Project: feature-flag-demo
+Description: Purpose of this project is to experiment with feature flags using Unleash client 
+Keywords: Unleash, feature-flags
+-----------------------------------------------------------------------------------------------
