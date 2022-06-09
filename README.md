@@ -46,3 +46,8 @@ Project: feature-flag-demo
 Description: Purpose of this project is to experiment with feature flags using Unleash client 
 Keywords: Unleash, feature-flags
 -----------------------------------------------------------------------------------------------
+Project: mongo-client-demo
+Description: Purpose of this project is to demo connection with MongoDB from non spring boot 
+projects
+Keywords: mongodb, MongoClient
+-----------------------------------------------------------------------------------------------
