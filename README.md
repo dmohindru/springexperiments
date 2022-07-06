@@ -51,3 +51,11 @@ Description: Purpose of this project is to demo connection with MongoDB from non
 projects
 Keywords: mongodb, MongoClient
 -----------------------------------------------------------------------------------------------
+Project: java-concurrency
+Description: Purpose of this project is to experiment with java concurrency api
+Keywords: Completablefuture, async
+-----------------------------------------------------------------------------------------------
+Project: sqlite-demo
+Description: Purpose of this project is to demo sqlite usage with spring-boot
+Keywords: sqlite, hibernate
+-----------------------------------------------------------------------------------------------
