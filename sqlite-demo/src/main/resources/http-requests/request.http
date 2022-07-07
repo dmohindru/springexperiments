@@ -1,0 +1,34 @@
+###
+## GET all persons
+GET {{host}}}/api/v1/person
+Accept: application/json
+
+
+###
+## Add a person
+POST {{host}}/api/v1/person
+Content-Type: application/json
+
+{
+  "name": "New Person",
+  "message": "New Message"
+}
+
+###
+## Update a person
+PATCH {{host}}/api/v1/person/10
+Content-Type: application/json
+
+{
+  "name": "Edited Person",
+  "message": "Edited Message"
+}
+
+###
+## Delete a person
+DELETE  {{host}}/api/v1/person/1001
+Accept: application/json
+
+
+
+
