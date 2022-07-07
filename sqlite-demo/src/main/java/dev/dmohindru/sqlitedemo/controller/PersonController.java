@@ -17,31 +17,25 @@ public class PersonController {
 
     @GetMapping
     ResponseEntity<List<PersonDTO>> getAllPerson() {
-        return new ResponseEntity<>(List.of(
-                PersonDTO.builder().name("Dhruv").message("Hello").build(),
-                PersonDTO.builder().name("Poonam").message("Hello Poonam").build()),
-                HttpStatus.OK);
+
+
+
+        return new ResponseEntity<>(personService.getAll(), HttpStatus.OK);
     }
 
     @PostMapping
     ResponseEntity<PersonDTO> savePerson(@RequestBody PersonDTO personDTO) {
-        return new ResponseEntity<>(personDTO, HttpStatus.CREATED);
+        return new ResponseEntity<>(personService.add(personDTO), HttpStatus.CREATED);
     }
 
     @PatchMapping("/{personId}")
     ResponseEntity<PersonDTO> updatePerson(@PathVariable("personId") Integer personId, @RequestBody PersonDTO personDTO) {
-        personDTO.setName(personDTO.getName() + personId);
-        return new ResponseEntity<>(personDTO, HttpStatus.OK);
+        return new ResponseEntity<>(personService.update(personId, personDTO), HttpStatus.OK);
     }
 
     @DeleteMapping("/{personId}")
-    ResponseEntity<PersonDTO> deletePerson(@PathVariable("personId") Integer personId) {
-        PersonDTO deletedPerson = PersonDTO
-                .builder()
-                .name("Deleted Person " + personId)
-                .message("Deleted message")
-                .build();
-
-        return new ResponseEntity<>(deletedPerson, HttpStatus.OK);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void deletePerson(@PathVariable("personId") Integer personId) {
+        personService.deleteById(personId);
     }
 }

@@ -6,9 +6,9 @@ import dev.dmohindru.sqlitedemo.entity.Person;
 import java.util.List;
 
 public interface PersonService {
-    List<Person> getAll();
-    Person findById();
+    List<PersonDTO> getAll();
+    PersonDTO findById(Integer id);
     void deleteById(Integer id);
-    Person add(PersonDTO personDTO);
-    Person update(PersonDTO personDTo);
+    PersonDTO add(PersonDTO personDTO);
+    PersonDTO update(Integer id, PersonDTO personDTo);
 }

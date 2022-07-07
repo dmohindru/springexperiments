@@ -1,6 +1,6 @@
 ###
 ## GET all persons
-GET {{host}}}/api/v1/person
+GET {{host}}/api/v1/person
 Accept: application/json
 
 
@@ -10,23 +10,23 @@ POST {{host}}/api/v1/person
 Content-Type: application/json
 
 {
-  "name": "New Person",
-  "message": "New Message"
+  "name": "Poonam Mohindru",
+  "message": "Hello from Poonam"
 }
 
 ###
 ## Update a person
-PATCH {{host}}/api/v1/person/10
+PATCH {{host}}/api/v1/person/6
 Content-Type: application/json
 
 {
-  "name": "Edited Person",
-  "message": "Edited Message"
+  "name": "Poonam Arora Mohindru",
+  "message": "Hello from Poonam Arora Mohindru"
 }
 
 ###
 ## Delete a person
-DELETE  {{host}}/api/v1/person/1001
+DELETE  {{host}}/api/v1/person/6
 Accept: application/json
 
 
