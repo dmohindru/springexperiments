@@ -15,6 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonDTO {
+
+    @JsonProperty(value = "id")
+    private Integer id;
     @JsonProperty(value = "name")
     private String name;
     @JsonProperty(value = "message")

@@ -3,6 +3,11 @@
 GET {{host}}/api/v1/person
 Accept: application/json
 
+###
+
+GET {{host}}/api/v1/person/10
+Accept: application/json
+
 
 ###
 ## Add a person
@@ -10,8 +15,8 @@ POST {{host}}/api/v1/person
 Content-Type: application/json
 
 {
-  "name": "Poonam Mohindru",
-  "message": "Hello from Poonam"
+  "name": "Dhruv Mohindru",
+  "message": "Hello from Dhruv"
 }
 
 ###

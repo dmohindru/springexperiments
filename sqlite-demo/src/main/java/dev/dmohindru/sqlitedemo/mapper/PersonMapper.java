@@ -5,10 +5,9 @@ import dev.dmohindru.sqlitedemo.entity.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
 
-    @Mapping(target = "id", ignore = true)
     Person personDTOtoPerson(PersonDTO personDTO);
 
     PersonDTO personToPersonDTO(Person person);

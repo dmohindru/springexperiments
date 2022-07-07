@@ -24,7 +24,12 @@ public class PersonServiceImpl implements PersonService{
         return personRepository
                 .findAll()
                 .stream()
-                .map(person -> personMapper.personToPersonDTO(person))
+                .map(person -> PersonDTO
+                        .builder()
+                        .id(person.getId())
+                        .name(person.getName())
+                        .message(person.getMessage())
+                        .build())
                 .collect(Collectors.toList());
     }
 
@@ -32,9 +37,14 @@ public class PersonServiceImpl implements PersonService{
     public PersonDTO findById(Integer id) {
         Person foundPerson = personRepository.findById(id).orElse(null);
         if (foundPerson != null) {
-            return personMapper.personToPersonDTO(foundPerson);
+            return PersonDTO
+                    .builder()
+                    .id(foundPerson.getId())
+                    .name(foundPerson.getName())
+                    .message(foundPerson.getMessage())
+                    .build();
         }
-        return null;
+        throw new RuntimeException("Not found");
     }
 
     @Override
@@ -47,10 +57,16 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public PersonDTO add(PersonDTO personDTO) {
-        Person person = personMapper.personDTOtoPerson(personDTO);
+        Person person = new Person();
+        person.setName(personDTO.getName());
+        person.setMessage(personDTO.getMessage());
         Person savedPerson = personRepository.save(person);
         log.info("Person saved: {}", savedPerson);
-        return personMapper.personToPersonDTO(savedPerson);
+        return PersonDTO.builder()
+                .id(savedPerson.getId())
+                .name(savedPerson.getName())
+                .message(savedPerson.getMessage())
+                .build();
     }
 
     @Override
@@ -64,6 +80,11 @@ public class PersonServiceImpl implements PersonService{
         person.setName(personDTo.getName());
 
         Person updatedPerson = personRepository.save(person);
-        return personMapper.personToPersonDTO(updatedPerson);
+        return PersonDTO
+                .builder()
+                .id(updatedPerson.getId())
+                .name(updatedPerson.getName())
+                .message(updatedPerson.getMessage())
+                .build();
     }
 }

@@ -17,10 +17,12 @@ public class PersonController {
 
     @GetMapping
     ResponseEntity<List<PersonDTO>> getAllPerson() {
-
-
-
         return new ResponseEntity<>(personService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{personId}")
+    ResponseEntity<PersonDTO> getPersonById(@PathVariable("personId") Integer id) {
+        return new ResponseEntity<>(personService.findById(id), HttpStatus.OK);
     }
 
     @PostMapping
