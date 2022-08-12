@@ -1,0 +1,9 @@
+plugins/
+target/
+.idea/
+*.iml
+auth-service.log
+.classpath
+.project
+.settings/
+.DS_Store
