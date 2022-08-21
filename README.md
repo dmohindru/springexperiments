@@ -59,3 +59,7 @@ Project: sqlite-demo
 Description: Purpose of this project is to demo sqlite usage with spring-boot
 Keywords: sqlite, hibernate
 -----------------------------------------------------------------------------------------------
+Project: s3-camel-demo
+Description: Purpose of this project is to demo s3 integration with camel library
+Keywords: s3, camel, integration
+-----------------------------------------------------------------------------------------------
