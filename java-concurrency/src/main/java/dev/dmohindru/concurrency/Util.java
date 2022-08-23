@@ -3,14 +3,16 @@ package dev.dmohindru.concurrency;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Util {
 
     public static <T> T getResult(String computationName, long delay, T value) {
-        System.out.printf("Running computation [%s] in thread [%s]%n",
+
+        sleep(delay);
+        System.out.printf("Completed computation [%s] in thread [%s]%n",
                 computationName,
                 Thread.currentThread().getName());
-        sleep(delay);
         return value;
 
     }
@@ -50,6 +52,14 @@ public class Util {
      */
 
     public static <T> CompletableFuture<T> fromSupplier(String computationName, long delay, T data ) {
-        return CompletableFuture.supplyAsync(() -> Util.getResult(computationName, delay, data));
+        return CompletableFuture.supplyAsync(() -> getResult(computationName, delay, data));
+    }
+
+
+    public static <T> CompletableFuture<T> fromSupplier(String computationName, AtomicInteger atomicInteger, long delay, T data ) {
+        return CompletableFuture.supplyAsync(() -> {
+            atomicInteger.getAndIncrement();
+            return getResult(computationName, delay, data);
+        });
     }
 }
