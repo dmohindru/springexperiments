@@ -22,11 +22,46 @@
 			<artifactId>camel-spring-boot-starter</artifactId>
 			<version>3.18.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-aws2-s3-starter</artifactId>
+			<version>3.18.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-quartz-starter</artifactId>
+			<version>3.18.1</version>
+			<!-- use the same version as your Camel core version -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-direct-starter</artifactId>
+			<version>3.18.1</version>
+			<!-- use the same version as your Camel core version -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-quartz</artifactId>
+			<version>3.18.1</version>
+			<!-- use the same version as your Camel core version -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cron</artifactId>
+			<version>3.18.1</version>
+			<!-- use the same version as your Camel core version -->
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -35,6 +70,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
