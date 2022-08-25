@@ -35,6 +35,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-file-starter</artifactId>
+			<version>3.18.1</version>
+			<!-- use the same version as your Camel core version -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
 			<artifactId>camel-direct-starter</artifactId>
 			<version>3.18.1</version>
 			<!-- use the same version as your Camel core version -->
