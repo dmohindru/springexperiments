@@ -40,6 +40,14 @@ public class FileToS3Route extends RouteBuilder {
 
         // Set S3Client in camel registry
         registry.bind("s3Client", s3Client);
+        /*
+        Description of this route
+        -------------------------
+        1. This route is called from s3 to file route
+        2. It reads the file from dynamic folder (on the basis of date) and wild card in file name
+        3. Processes the content of file
+        4. Uploads the file to different folder in AWS S3
+         */
 
         // Direct route called from s3-to-file route
         from("direct:file-to-S3")
