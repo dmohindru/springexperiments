@@ -41,21 +41,29 @@ public class FileToS3Route extends RouteBuilder {
         // Set S3Client in camel registry
         registry.bind("s3Client", s3Client);
 
-        from("quartz://mytimer?trigger.repeatInterval=5000")
+        // Direct route called from s3-to-file route
+        from("direct:file-to-S3")
                 // Route ID
-                .routeId("Quartz-timer-File-S3")
+                .routeId("file-to-s3")
                 .process(new Processor() {
                     @Override
                     public void process(Exchange exchange) throws Exception {
-                        // Set file name
+                        // make folder name by date format year-month-day_of_year
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-DD");
                         LocalDateTime now = LocalDateTime.now();
                         String dateFolder = formatter.format(now);
-                        fileEndpoint = "file://data/outbox/" + dateFolder + "?noop=true&antInclude="+"File01*";
+                        // retrieve original file name set previously in route
+                        String originalFileName = exchange.getProperty("originalFileName", String.class);
+                        // prepare uri for file to be read
+                        fileEndpoint = "file://data/inbox/"
+                                + dateFolder
+                                + "?noop=true&antInclude="+ originalFileName +"*";
                         exchange.getIn().setHeader("fileEndpoint", fileEndpoint);
                     }
                 })
+                // Log file endpoint uri used
                 .log("Reading file with uri: " + "${header.fileEndpoint}")
+                // Read file from dynamic uri
                 .pollEnrich().simple("${header.fileEndpoint}")
                 .process(new Processor() {
 
@@ -63,10 +71,12 @@ public class FileToS3Route extends RouteBuilder {
                     public void process(Exchange exchange) throws Exception {
                         String fileNameConsumed = exchange.getIn().getHeader(Exchange.FILE_NAME_CONSUMED, String.class);
                         log.info("File name consumed: " + fileNameConsumed);
-                        //log.info("Content of body: " + exchange.getIn().getBody(String.class));
+
+                        // Process body content
                         String bodyContent = exchange.getIn().getBody(String.class);
                         bodyContent += "\nModified by camel project written by Dhruv";
                         exchange.getIn().setBody(bodyContent, String.class);
+                        // Set file name/key to be uploaded to S3
                         exchange.getIn().setHeader(AWS2S3Constants.KEY, "myfolder1/processed/" + fileNameConsumed);
                     }
                 })

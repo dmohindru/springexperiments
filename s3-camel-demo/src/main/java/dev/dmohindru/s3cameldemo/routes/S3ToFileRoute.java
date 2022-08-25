@@ -12,9 +12,11 @@ import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
-//@Component
+@Component
 @Slf4j
 public class S3ToFileRoute extends RouteBuilder {
     @Override
@@ -88,13 +90,21 @@ public class S3ToFileRoute extends RouteBuilder {
                         log.info("Name of S3 file read: " + readFileName);
                         String body = exchange.getIn().getBody(String.class);
                         log.info("Content of body: " + body);
-                        String destinationFileName = "Local-" + readFileName;
+                        // create folder by date
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-DD");
+                        LocalDateTime now = LocalDateTime.now();
+                        String dateFolder = formatter.format(now);
+                        //---------
+                        String fileName = "Local-" + readFileName.split("/")[1];
+                        String destinationFileName = dateFolder + "/" + fileName + "-23408skdlfjiosdflj";
                         exchange.getIn().setHeader(Exchange.FILE_NAME, destinationFileName);
+                        exchange.setProperty("originalFileName", fileName);
                     }
                 })
                 // Log file name about to be written into destination folder
                 .log("About to write following file: ${header.CamelFileName}")
-                .to("file:data/inbox");
+                .to("file:data/inbox")
+                .to("direct:file-to-S3");
 
         /* when(body().isNull()).
                     stop().
