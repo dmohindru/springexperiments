@@ -67,7 +67,7 @@ public class S3ToFileRoute extends RouteBuilder {
                         // IMPORTANT all the folder structure in S3 bucket must be included in KEY
                         // For this example files are located in following S3 location
                         // s3://my-test-bucket-dhruv/myfolder1/File0.txt
-                        exchange.getIn().setHeader(AWS2S3Constants.KEY, "myfolder1/File"+randomNumber+".txt");
+                        exchange.getIn().setHeader(AWS2S3Constants.KEY, "myfolder1/File"+randomNumber+".txt0");
                     }
                 })
                 // Log name of the file to be read

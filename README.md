@@ -63,3 +63,7 @@ Project: s3-camel-demo
 Description: Purpose of this project is to demo s3 integration with camel library
 Keywords: s3, camel, integration
 -----------------------------------------------------------------------------------------------
+Project: async-api-demo
+Description: Purpose of this project is to demo async computation in spring-boot
+Keywords: async, api, CompletableFuture
+-----------------------------------------------------------------------------------------------
