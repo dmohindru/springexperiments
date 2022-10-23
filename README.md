@@ -67,3 +67,7 @@ Project: async-api-demo
 Description: Purpose of this project is to demo async computation in spring-boot
 Keywords: async, api, CompletableFuture
 -----------------------------------------------------------------------------------------------
+Project: spring-boot-kafka-example
+Description: Purpose of this project is to demo basic know how about using kafka with spring boot
+Keywords: kafka, producer, consumer, topics
+-----------------------------------------------------------------------------------------------
