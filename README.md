@@ -71,3 +71,7 @@ Project: spring-boot-kafka-example
 Description: Purpose of this project is to demo basic know how about using kafka with spring boot
 Keywords: kafka, producer, consumer, topics
 -----------------------------------------------------------------------------------------------
+Project: springboot-kafka-real-world-project
+Description: This is a real world project using kafka and spring boot
+Keywords: kafka, producer, consumer, topics, wikimedia
+-----------------------------------------------------------------------------------------------
