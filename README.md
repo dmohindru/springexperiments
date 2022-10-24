@@ -73,5 +73,5 @@ Keywords: kafka, producer, consumer, topics
 -----------------------------------------------------------------------------------------------
 Project: springboot-kafka-real-world-project
 Description: This is a real world project using kafka and spring boot
-Keywords: kafka, producer, consumer, topics, wikimedia
+Keywords: kafka, producer, consumer, topics, wikimedia, kafka-streams
 -----------------------------------------------------------------------------------------------
