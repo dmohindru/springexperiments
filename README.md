@@ -75,3 +75,7 @@ Project: springboot-kafka-real-world-project
 Description: This is a real world project using kafka and spring boot
 Keywords: kafka, producer, consumer, topics, wikimedia, kafka-streams
 -----------------------------------------------------------------------------------------------
+Project: springboot-postgis-example
+Description: This is a example project using PostGIS and hibernate.
+Keywords: Postgres, Postgis, Geospecial data.
+-----------------------------------------------------------------------------------------------
