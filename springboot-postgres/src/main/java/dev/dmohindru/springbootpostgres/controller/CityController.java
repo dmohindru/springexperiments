@@ -23,6 +23,6 @@ public class CityController {
 
     @RequestMapping(method = RequestMethod.POST)
     CityDto saveCity(@RequestBody CityDto cityDto) {
-        return null;
+        return cityService.saveCity(cityDto);
     }
 }
