@@ -10,4 +10,4 @@ us_cities.geojson
 ```
 
 ### Important Links
-[Followed this link for serialize and deserialize Geometry type](https://gis.stackexchange.com/questions/32125/hibernate-spatial-mappingexception-for-geometry-column)
+- [Followed this link for serialize and deserialize Geometry type](https://gis.stackexchange.com/questions/32125/hibernate-spatial-mappingexception-for-geometry-column)
