@@ -11,9 +11,9 @@ POST http://localhost:8090/api/v1/student
 Content-Type: application/json
 
 {
-  "firstName": "David",
-  "lastName": "Stock",
-  "email": "david@advancednavigation.com"
+  "firstName": "Tony",
+  "lastName": "Rocks",
+  "email": "Tony@advancednavigation.com"
 }
 
 
