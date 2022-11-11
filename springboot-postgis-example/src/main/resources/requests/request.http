@@ -1,0 +1,4 @@
+GET http://localhost:8980/city?page=1&size=10
+Accept: application/json
+
+###
