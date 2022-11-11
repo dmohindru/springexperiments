@@ -12,17 +12,17 @@ public class StudentDaoPostgresImpl implements StudentDao {
 
     @Override
     public Student findStudentByEmail(String email) {
-        return studentRepository.findStudentByEmail(email);
+        return studentRepository.findFirstByEmail(email);
     }
 
     @Override
     public Student findStudentByFirstname(String firstName) {
-        return studentRepository.findStudentByFirstName(firstName);
+        return studentRepository.findFirstByFirstName(firstName);
     }
 
     @Override
     public Student findStudentByLastname(String lastName) {
-        return studentRepository.findStudentByLastName(lastName);
+        return studentRepository.findFirstByLastName(lastName);
     }
 
     @Override

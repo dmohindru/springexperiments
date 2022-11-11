@@ -15,14 +15,16 @@ public class StudentController {
     private final StudentService studentService;
 
     @RequestMapping(method = RequestMethod.GET)
-    Student getStudent(@RequestParam(name = "email") String email) {
+    Student getStudent(@RequestParam(name = "email", required = false) String email,
+                       @RequestParam(name = "firstName", required = false) String firstName,
+                       @RequestParam(name = "lastName", required = false) String lastName) {
 
         if (email != null)
             return studentService.findStudentByEmail(email);
-//        else if (firstName != null)
-//            return studentService.findStudentByFirstname(firstName);
-//        else if (lastName != null)
-//            return studentService.findStudentByLastname(lastName);
+        else if (firstName != null)
+            return studentService.findStudentByFirstname(firstName);
+        else if (lastName != null)
+            return studentService.findStudentByLastname(lastName);
 
         throw new InvalidRequestParameters("Invalid request parameter");
     }
