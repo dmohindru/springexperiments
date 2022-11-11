@@ -1,0 +1,2 @@
+GET http://localhost:8090/api/v1/city?id=53
+Accept: application/json
