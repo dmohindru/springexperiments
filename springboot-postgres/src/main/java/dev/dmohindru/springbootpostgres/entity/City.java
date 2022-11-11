@@ -1,12 +1,21 @@
 package dev.dmohindru.springbootpostgres.entity;
 
-import com.vividsolutions.jts.geom.Point;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
+import org.locationtech.jts.geom.Point;
+import org.n52.jackson.datatype.jts.GeometryDeserializer;
+import org.n52.jackson.datatype.jts.GeometrySerializer;
 import javax.persistence.*;
 
 @Data
 @Entity(name = "us_cities")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class City {
 
     @Id
@@ -27,8 +36,10 @@ public class City {
     @Column(name="state")
     private String state;
 
-//    @Column(columnDefinition = "geography", name = "wkb_geometry")
-//    private Point point;
+    @Column(name = "wkb_geometry", columnDefinition = "POINT")
+    @JsonSerialize(using = GeometrySerializer.class)
+    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
+    private Point point;
 
 
 }

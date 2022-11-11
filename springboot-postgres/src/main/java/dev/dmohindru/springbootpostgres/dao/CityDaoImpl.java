@@ -17,4 +17,9 @@ public class CityDaoImpl implements CityDao{
     public City findCityById(String id) {
         return cityRepository.findFirstById(id);
     }
+
+    @Override
+    public City saveCity(City city) {
+        return cityRepository.save(city);
+    }
 }

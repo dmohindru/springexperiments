@@ -5,10 +5,7 @@ import dev.dmohindru.springbootpostgres.entity.City;
 import dev.dmohindru.springbootpostgres.exceptions.InvalidRequestParameters;
 import dev.dmohindru.springbootpostgres.service.CityService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/city")
@@ -22,5 +19,10 @@ public class CityController {
         if (id != null)
             return cityService.getCityById(id);
         throw new InvalidRequestParameters("Invalid request parameter for city controller");
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    CityDto saveCity(@RequestBody CityDto cityDto) {
+        return null;
     }
 }

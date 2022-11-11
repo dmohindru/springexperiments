@@ -23,13 +23,18 @@ public class CityServiceImpl implements CityService {
                 .elevation(city.getAltitude())
                 .population(city.getPopulation2010())
                 .state(city.getState())
-//                .position(
-//                        CityDto.Position.builder()
-//                        .lat(city.getPoint().getX())
-//                        .lng(city.getPoint().getY())
-//                        .build()
-//                )
+                .position(
+                        CityDto.Position.builder()
+                        .lat(city.getPoint().getX())
+                        .lng(city.getPoint().getY())
+                        .build()
+                )
                 .build();
         return cityDto;
+    }
+
+    @Override
+    public CityDto saveCity(CityDto cityDto) {
+        return null;
     }
 }
