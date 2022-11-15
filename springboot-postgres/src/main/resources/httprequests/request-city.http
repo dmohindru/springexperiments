@@ -1,0 +1,18 @@
+POST http://localhost:8090/api/v1/city
+Content-Type: application/json
+
+{
+  "id": 10001,
+  "population": 50550,
+  "elevation": 2121,
+  "state": "ME",
+  "position": {
+    "lat": -151.9087654,
+    "lng": 31.345678
+  }
+
+}
+
+###
+GET http://localhost:8090/api/v1/city?id=101
+Accept: application/json
