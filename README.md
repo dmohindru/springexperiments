@@ -79,3 +79,7 @@ Project: springboot-PostgreSQL
 Description: This is a example project using PostGres, PostGIS and hibernate.
 Keywords: Postgres, Postgis, Geospecial data.
 -----------------------------------------------------------------------------------------------
+Project: springboot-google-cloud-storage-example
+Description: This is a example project to make a CRUD operation on Google cloud storage
+Keywords: Google, cloud storage, GCP
+-----------------------------------------------------------------------------------------------
