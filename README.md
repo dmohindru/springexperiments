@@ -95,6 +95,30 @@ Keywords: async, api, CompletableFuture
 
 ---
 
+Project: spring-boot-kafka-example
+Description: Purpose of this project is to demo basic know how about using kafka with spring boot
+Keywords: kafka, producer, consumer, topics
+
+---
+
+Project: springboot-kafka-real-world-project
+Description: This is a real world project using kafka and spring boot
+Keywords: kafka, producer, consumer, topics, wikimedia, kafka-streams
+
+---
+
+Project: springboot-PostgreSQL
+Description: This is a example project using PostGres, PostGIS and hibernate.
+Keywords: Postgres, Postgis, Geospecial data.
+
+---
+
+Project: springboot-google-cloud-storage-example
+Description: This is a example project to make a CRUD operation on Google cloud storage
+Keywords: Google, cloud storage, GCP
+
+---
+
 Project: [secured-communication](./secured-communication/)
 Description: Purpose of this project is to demo secured tcp commuincation using java sockets
 Keywords: jsse, tcp, sockets, ssl, tls

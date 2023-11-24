@@ -1,0 +1,19 @@
+GET http://localhost:8090/api/v1/student?email=david@advancednavigation.com
+Accept: application/json
+
+###
+
+GET http://localhost:8090/api/v1/student?firstName=David
+Accept: application/json
+
+###
+POST http://localhost:8090/api/v1/student
+Content-Type: application/json
+
+{
+  "firstName": "Tony",
+  "lastName": "Rocks",
+  "email": "Tony@advancednavigation.com"
+}
+
+

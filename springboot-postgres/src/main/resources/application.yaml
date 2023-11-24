@@ -1,0 +1,14 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/dhruv_testing
+    username: rootdb
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+      show-sql: true
