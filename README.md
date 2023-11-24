@@ -124,3 +124,9 @@ Description: Purpose of this project is to demo secured tcp commuincation using 
 Keywords: jsse, tcp, sockets, ssl, tls
 
 ---
+
+Project: [string-processor-tcp-communication](./string-processor-tcp-communication/)
+Description: Purpose of this project is to practice tcp communication using custom made protocol using secured sockets
+Keywords: jsse, tcp, sockets, ssl, tls
+
+---
