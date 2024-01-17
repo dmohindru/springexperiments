@@ -130,3 +130,9 @@ Description: Purpose of this project is to practice tcp communication using cust
 Keywords: jsse, tcp, sockets, ssl, tls
 
 ---
+
+Project: [api-validation](./api-validation/)
+Description: Purpose of this project is to demo standard and custom api validations and configure h2 database for demo purpose
+Keywords: api validation, custom validations, h2
+
+---
