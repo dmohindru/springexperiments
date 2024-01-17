@@ -6,3 +6,7 @@ This demo spring boot project demonstrates how to do
 - Configure h2 database for demo purpose
 - Create custom exception handler
 - Implement `org.springframework.boot.CommandLineRunner` as data feeder to h2 database
+
+### Instruction
+To connect to h2 console visit following link
+[http://localhost:8080/h2-console](http://localhost:8080/h2-console)
