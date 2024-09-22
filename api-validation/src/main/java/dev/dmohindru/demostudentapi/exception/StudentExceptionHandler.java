@@ -1,5 +1,6 @@
 package dev.dmohindru.demostudentapi.exception;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
